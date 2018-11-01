@@ -1,0 +1,56 @@
+
+<html>
+<head>
+
+</head>
+<div>
+<h2>Movie Collection</h2>
+</div>
+
+<body>
+  <h3> Add Movie </h3>
+
+  <form action="/add-movie" method="POST">
+
+    <input type="text" name="title" placeholder="Movie Name">
+    <input type="text" name="genre" placeholder="Movie Genre">
+    <input type="text" name="description" placeholder="Movie Description">
+    <input type="text" name="posterURL" placeholder="Movie posterURL">
+
+    <input type="submit" value="add">
+
+  </form>
+
+
+
+
+  <ul>
+  {{#movies}}
+
+    <form action="remove-movie" method="POST">
+      <img src = {{movieposterURL}}>
+      <li> {{movieTitle}}
+      <br> Genre: {{movieGenre}}
+      <br> Description:{{movieDescription}}
+
+    <input type="hidden" name="movieName" value="{{title}}"/>
+    <input type="submit" value="remove">
+
+    </form>
+    </li>
+  {{/movies}}
+  </ul>
+
+   <form action="more-details" method="POST">
+    <input type="submit" value="details">
+
+
+
+  </form> 
+
+
+
+
+</body>
+
+</html>
